@@ -3,7 +3,6 @@
 exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
 [
   {
-    "categoryId": 1,
     "descriptor": "tall",
     "focusCategoryGroup": {
       "categoryId": 10,
@@ -16,10 +15,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Pants",
       "type": "pants",
     },
+    "leafCat": 1,
     "value": "large",
   },
   {
-    "categoryId": 1,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 10,
@@ -32,10 +31,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Pants",
       "type": "pants",
     },
+    "leafCat": 1,
     "value": "medium",
   },
   {
-    "categoryId": 2,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 10,
@@ -48,10 +47,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Pants",
       "type": "pants",
     },
+    "leafCat": 2,
     "value": "medium",
   },
   {
-    "categoryId": 3,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 10,
@@ -64,10 +63,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Pants",
       "type": "pants",
     },
+    "leafCat": 3,
     "value": "small",
   },
   {
-    "categoryId": 4,
     "descriptor": "waist",
     "focusCategoryGroup": {
       "categoryId": 20,
@@ -82,10 +81,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Women's Pants",
       "type": "pants",
     },
+    "leafCat": 4,
     "value": "32",
   },
   {
-    "categoryId": 5,
     "descriptor": "waist",
     "focusCategoryGroup": {
       "categoryId": 20,
@@ -100,10 +99,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Women's Pants",
       "type": "pants",
     },
+    "leafCat": 5,
     "value": "34",
   },
   {
-    "categoryId": 6,
     "descriptor": "inseam",
     "focusCategoryGroup": {
       "categoryId": 20,
@@ -118,10 +117,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Women's Pants",
       "type": "pants",
     },
+    "leafCat": 6,
     "value": "36",
   },
   {
-    "categoryId": 7,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 20,
@@ -136,10 +135,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Women's Pants",
       "type": "pants",
     },
+    "leafCat": 7,
     "value": "38",
   },
   {
-    "categoryId": 10,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 30,
@@ -151,10 +150,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Shirts",
       "type": "shirt",
     },
+    "leafCat": 10,
     "value": "large",
   },
   {
-    "categoryId": 9,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 30,
@@ -166,10 +165,10 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Men's Shirts",
       "type": "shirt",
     },
+    "leafCat": 9,
     "value": "medium",
   },
   {
-    "categoryId": 11,
     "descriptor": undefined,
     "focusCategoryGroup": {
       "categoryId": 40,
@@ -180,6 +179,7 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
       "name": "Brands",
       "type": "brands",
     },
+    "leafCat": 11,
     "value": "adidas",
   },
 ]

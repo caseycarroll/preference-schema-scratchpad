@@ -2,10 +2,10 @@ import { ExplicitPreference, fashionCategories, FashionPreference } from "./pref
 
 function toFashionPreferences(acc: FashionPreference[], userPreference: ExplicitPreference) {
     const category = fashionCategories.find((category) =>
-        category.categoryIds.includes(userPreference.categoryId)
+        category.categoryIds.includes(userPreference.leafCat)
     );
     if(!category) {
-        console.warn(`Category not found for categoryId: ${userPreference.categoryId}`);
+        console.warn(`Category not found for leafCat: ${userPreference.leafCat}`);
         return acc;
     }
     acc.push({

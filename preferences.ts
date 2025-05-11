@@ -3,7 +3,7 @@ import { toFashionPreferences, toPreferencesWithDescriptors } from "./utils.ts";
 // Shape of user preferences in CDP
 export type ExplicitPreference = {
     value: string;
-    categoryId: number;
+    leafCat: number;
 }
 
 // Introduce a type for grouping preferences into generic categories
@@ -35,16 +35,16 @@ export interface FashionPreference extends FocusCategoryPreference {
 
 // User preferences in CDP
 const userPreferences: ExplicitPreference[] = [
-    { value: 'large,tall|medium', categoryId: 1 },
-    { value: 'medium', categoryId: 2 },
-    { value: 'small', categoryId: 3 },
-    { value: '32,waist', categoryId: 4 },
-    { value: '34,waist', categoryId: 5 },
-    { value: '36,inseam', categoryId: 6 },
-    { value: '38', categoryId: 7 },
-    { value: 'large', categoryId: 10 },
-    { value: 'medium', categoryId: 9 },
-    { value: 'adidas', categoryId: 11 },
+    { value: 'large,tall|medium', leafCat: 1 },
+    { value: 'medium', leafCat: 2 },
+    { value: 'small', leafCat: 3 },
+    { value: '32,waist', leafCat: 4 },
+    { value: '34,waist', leafCat: 5 },
+    { value: '36,inseam', leafCat: 6 },
+    { value: '38', leafCat: 7 },
+    { value: 'large', leafCat: 10 },
+    { value: 'medium', leafCat: 9 },
+    { value: 'adidas', leafCat: 11 },
 ];
 
 // Fashion Category Groupings maintained by humans
