@@ -1,6 +1,6 @@
 import { ExplicitPreference, fashionCategories, FashionPreference } from "./preferences.ts";
 
-function toFashionPreferences(acc, userPreference: ExplicitPreference) {
+function toFashionPreferences(acc: FashionPreference[], userPreference: ExplicitPreference) {
     const category = fashionCategories.find((category) =>
         category.categoryIds.includes(userPreference.categoryId)
     );
@@ -10,10 +10,7 @@ function toFashionPreferences(acc, userPreference: ExplicitPreference) {
     }
     acc.push({
         ...userPreference,
-        categoryId: category.categoryId,
-        categoryName: category.name,
-        gender: category.gender,
-        type: category.type,
+        focusCategoryGroup: category
     });
     return acc;
 }

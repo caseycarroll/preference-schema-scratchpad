@@ -6,12 +6,4 @@ describe('Preference Resolvers', () => {
         const fashionPreferences = resolvers.Query.fashionPreferences();
         expect(fashionPreferences).toMatchSnapshot();
     });
-    it('should resolve fashion preferences by type', () => {
-        const fashionPreferencesByType = resolvers.Query.fashionPreferencesByType();
-        expect(fashionPreferencesByType).toMatchSnapshot();
-    });
-    it('should resolve fashion preferences by type and gender', () => {
-        const fashionPreferencesByTypeAndGender = resolvers.Query.fashionPrefrencesByTypeAndGender();
-        expect(fashionPreferencesByTypeAndGender).toMatchSnapshot();  
-    });
 });

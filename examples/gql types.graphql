@@ -1,0 +1,31 @@
+type ExplicitPreference {
+    leafCat: Int
+    value: String
+}
+
+enum GenderStyle {
+    MEN
+    WOMEN
+    ALL
+}
+
+interface FocusCategoryGroup {
+    categoryId: Int
+    categoryIds: [Int]
+    name: String
+}
+
+type FashionFocusCategoryGroup implements FocusCategoryGroup {
+    gender: GenderStyle
+    type: string
+}
+
+interface FocusCategoryPreference {
+    value: String
+    focusCategoryGroup: FocusCategoryGroup
+}
+
+type FashionFocusCategoryPreference implements FocusCategoryPreference {
+    descriptor: String
+    focusCategoryGroup: FashionFocusCategoryGroup
+}
