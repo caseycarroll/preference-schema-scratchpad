@@ -1,19 +1,23 @@
-import { type ExplicitPreference, fashionCategories, type FashionPreference } from "./preferences.js";
+import { type ExplicitPreference, type FashionPreference, type FocusCategoryPreference } from "./preferences.js";
 
-function toFashionPreferences(acc: FashionPreference[], userPreference: ExplicitPreference) {
-    const category = fashionCategories.find((category) =>
-        category.categoryIds.includes(userPreference.leafCat)
-    );
-    if(!category) {
-        console.warn(`Category not found for leafCat: ${userPreference.leafCat}`);
+function toFocusCategoryPreferences(focusCateogryGroups) {
+    return function (acc: any, userPreference: ExplicitPreference) {
+        const category = focusCateogryGroups.find((category) =>
+            category.categoryIds.includes(userPreference.leafCat)
+        );
+        if (!category) {
+            console.warn(`Category not found for leafCat: ${userPreference.leafCat}`);
+            return acc;
+        }
+        acc.push({
+            ...userPreference,
+            focusCategoryGroup: category
+        });
         return acc;
     }
-    acc.push({
-        ...userPreference,
-        focusCategoryGroup: category
-    });
-    return acc;
 }
+
+
 
 function toPreferencesWithDescriptors(acc, userPreference: FashionPreference) {
     userPreference.value.split('|').forEach((deliminitedValue) => {
@@ -27,6 +31,6 @@ function toPreferencesWithDescriptors(acc, userPreference: FashionPreference) {
     });
     return acc;
 }
-        
 
-export { toFashionPreferences, toPreferencesWithDescriptors };
+
+export { toFocusCategoryPreferences, toPreferencesWithDescriptors };

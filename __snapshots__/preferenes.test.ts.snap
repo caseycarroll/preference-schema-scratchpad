@@ -1,5 +1,197 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Preference Resolvers > should resolve all focus category groups 1`] = `
+[
+  {
+    "focusCategoryGroup": {
+      "categoryId": 10,
+      "categoryIds": [
+        1,
+        2,
+        3,
+      ],
+      "gender": "men",
+      "name": "Men's Pants",
+      "type": "pants",
+    },
+    "leafCat": 1,
+    "value": "large,tall|medium",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 10,
+      "categoryIds": [
+        1,
+        2,
+        3,
+      ],
+      "gender": "men",
+      "name": "Men's Pants",
+      "type": "pants",
+    },
+    "leafCat": 2,
+    "value": "medium",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 10,
+      "categoryIds": [
+        1,
+        2,
+        3,
+      ],
+      "gender": "men",
+      "name": "Men's Pants",
+      "type": "pants",
+    },
+    "leafCat": 3,
+    "value": "small",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 20,
+      "categoryIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+      ],
+      "gender": "women",
+      "name": "Women's Pants",
+      "type": "pants",
+    },
+    "leafCat": 4,
+    "value": "32,waist",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 20,
+      "categoryIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+      ],
+      "gender": "women",
+      "name": "Women's Pants",
+      "type": "pants",
+    },
+    "leafCat": 5,
+    "value": "34,waist",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 20,
+      "categoryIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+      ],
+      "gender": "women",
+      "name": "Women's Pants",
+      "type": "pants",
+    },
+    "leafCat": 6,
+    "value": "36,inseam",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 20,
+      "categoryIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+      ],
+      "gender": "women",
+      "name": "Women's Pants",
+      "type": "pants",
+    },
+    "leafCat": 7,
+    "value": "38",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 30,
+      "categoryIds": [
+        9,
+        10,
+      ],
+      "gender": "men",
+      "name": "Men's Shirts",
+      "type": "shirt",
+    },
+    "leafCat": 10,
+    "value": "large",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 30,
+      "categoryIds": [
+        9,
+        10,
+      ],
+      "gender": "men",
+      "name": "Men's Shirts",
+      "type": "shirt",
+    },
+    "leafCat": 9,
+    "value": "medium",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 40,
+      "categoryIds": [
+        11,
+      ],
+      "gender": "all",
+      "name": "Brands",
+      "type": "brands",
+    },
+    "leafCat": 11,
+    "value": "adidas",
+  },
+  {
+    "focusCategoryGroup": {
+      "categoryId": 50,
+      "categoryIds": [
+        12,
+        13,
+        14,
+      ],
+      "name": "Mobile Phone Brands",
+      "type": "brands",
+    },
+    "leafCat": 12,
+    "value": "Apple",
+  },
+]
+`;
+
+exports[`Preference Resolvers > should resolve electronics preferences 1`] = `
+[
+  {
+    "focusCategoryGroup": {
+      "categoryId": 50,
+      "categoryIds": [
+        12,
+        13,
+        14,
+      ],
+      "name": "Mobile Phone Brands",
+      "type": "brands",
+    },
+    "leafCat": 12,
+    "value": "Apple",
+  },
+]
+`;
+
 exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
 [
   {

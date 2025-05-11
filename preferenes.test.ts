@@ -6,4 +6,12 @@ describe('Preference Resolvers', () => {
         const fashionPreferences = resolvers.Query.fashionPreferences();
         expect(fashionPreferences).toMatchSnapshot();
     });
+    it('should resolve all focus category groups', () => {
+        const allFocusCategoryGroups = resolvers.Query.allFocusCategoryPreferences();
+        expect(allFocusCategoryGroups).toMatchSnapshot();
+    });
+    it('should resolve electronics preferences', () => {
+        const electronicsPreferences = resolvers.Query.electronicsPreferences();
+        expect(electronicsPreferences).toMatchSnapshot();
+    });
 });

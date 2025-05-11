@@ -1,4 +1,4 @@
-import { toFashionPreferences, toPreferencesWithDescriptors } from "./utils.js";
+import { toFocusCategoryPreferences, toPreferencesWithDescriptors } from "./utils.js";
 
 // Shape of user preferences in CDP
 export type ExplicitPreference = {
@@ -14,7 +14,7 @@ interface FocusCateogryGroup {
 }
 
 // Introduce a new type for focus category preferences
-interface FocusCategoryPreference {
+export interface FocusCategoryPreference {
     value: string;
     focusCategoryGroup: FocusCateogryGroup;
 }
@@ -46,19 +46,32 @@ const userPreferences: ExplicitPreference[] = [
     { value: 'medium', leafCat: 9 },
     // Question: Does brand have a leafCat?
     { value: 'adidas', leafCat: 11 },
+    // electronics preference
+    { value: 'Apple', leafCat: 12 },
 ];
 
 // Fashion Category Groupings maintained by humans
 // Imagine this comes from a config
-export const fashionCategories: FashionFocusCategoryGroup[] = [
+const fashionCategories: FashionFocusCategoryGroup[] = [
     { categoryIds: [1, 2, 3], name: `Men's Pants`, gender: 'men', type: 'pants', categoryId: 10 },
     { categoryIds: [4, 5, 6, 7, 8], name: `Women's Pants`, gender: 'women', type: 'pants', categoryId: 20 },
     { categoryIds: [9, 10], name: `Men's Shirts`, gender: 'men', type: 'shirt', categoryId: 30 },
     { categoryIds: [11], name: `Brands`, gender: 'all', type: 'brands', categoryId: 40 },
 ];
 
+const electronicsCategories = [
+    { categoryIds: [12, 13, 14], name: `Mobile Phone Brands`, categoryId: 50, type: "brands" },
+]
+
+const allfocusCategoryGroups = [
+    ...fashionCategories,
+    ...electronicsCategories
+];
+
 function resolveFashionPreferences(): FashionPreference[] {
-    return userPreferences.reduce(toFashionPreferences, []).reduce(toPreferencesWithDescriptors, []);
+    return userPreferences
+        .reduce(toFocusCategoryPreferences(fashionCategories), [])
+        .reduce(toPreferencesWithDescriptors, []);
 }
 
 // Imaginary GraphQL resolvers on Stashplex
@@ -67,5 +80,7 @@ export const resolvers = {
         preferences: () => userPreferences,
         fashionCategories: () => fashionCategories,
         fashionPreferences: () => resolveFashionPreferences(),
+        electronicsPreferences: () => userPreferences.reduce(toFocusCategoryPreferences(electronicsCategories), []),
+        allFocusCategoryPreferences: () => userPreferences.reduce(toFocusCategoryPreferences(allfocusCategoryGroups), []),
     },
 }
