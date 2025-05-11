@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
+import { resolvers as PreferenceResolvers } from './preferences.js';
 
 const books = [
   {
@@ -16,27 +17,66 @@ const books = [
 // that together define the "shape" of queries that are executed against
 // your data.
 const typeDefs = `#graphql
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
+type ExplicitPreference {
+    leafCat: Int
+    value: String
+}
 
-  # This "Book" type defines the queryable fields for every book in our data source.
-  type Book {
-    title: String
-    author: String
-  }
+enum GenderStyle {
+    MEN
+    WOMEN
+    ALL
+}
 
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
-  type Query {
-    books: [Book]
-  }
+interface FocusCategoryGroup {
+    categoryId: Int
+    categoryIds: [Int]
+    name: String
+}
+
+type FashionFocusCategoryGroup implements FocusCategoryGroup {
+    categoryId: Int
+    categoryIds: [Int]
+    name: String
+    gender: GenderStyle
+    type: String
+}
+
+type ElectronicsFocusCategoryGroup implements FocusCategoryGroup {
+    categoryId: Int
+    categoryIds: [Int]
+    name: String
+    type: String
+    portable: Boolean
+}
+
+interface FocusCategoryPreference {
+    value: String
+    focusCategoryGroup: FocusCategoryGroup
+}
+
+type FashionFocusCategoryPreference implements FocusCategoryPreference {
+    value: String
+    descriptor: String
+    focusCategoryGroup: FocusCategoryGroup
+}
+
+type ElectronicsFocusCategoryPreference implements FocusCategoryPreference {
+    value: String
+    focusCategoryGroup: FocusCategoryGroup
+}
+
+type Query {
+    preferences: [ExplicitPreference]
+    fashionCategories: [FashionFocusCategoryGroup]
+    fashionPreferences: [FashionFocusCategoryPreference]
+    electronicsPreferences: [ElectronicsFocusCategoryPreference]
+    allFocusCategoryPreferences: [FocusCategoryPreference]}
 `;
 
 
 const resolvers = {
-  Query: {
-    books: () => books,
-  },
+  ...PreferenceResolvers
 };
 
 // The ApolloServer constructor requires two parameters: your schema

@@ -6,7 +6,6 @@ function toFocusCategoryPreferences(focusCateogryGroups) {
             category.categoryIds.includes(userPreference.leafCat)
         );
         if (!category) {
-            console.warn(`Category not found for leafCat: ${userPreference.leafCat}`);
             return acc;
         }
         acc.push({

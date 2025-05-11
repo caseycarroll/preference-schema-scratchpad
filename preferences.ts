@@ -23,8 +23,12 @@ export interface FocusCategoryPreference {
 interface FashionFocusCategoryGroup extends FocusCateogryGroup {
     // add gender to avoid string parsing of name in base
     // useful for grouping data in the UI
-    gender: 'all' | 'men' | 'women';
+    gender: 'ALL' | 'MEN' | 'WOMEN';
     type: string; // Type of clothing i.e. Pants, Shirt
+}
+
+interface ElectronicsFocusCategoryGroup extends FocusCateogryGroup {
+    portale: boolean; // true if the category is portable
 }
 
 // Extend FocusCategoryPreference for Fashion use case
@@ -53,14 +57,14 @@ const userPreferences: ExplicitPreference[] = [
 // Fashion Category Groupings maintained by humans
 // Imagine this comes from a config
 const fashionCategories: FashionFocusCategoryGroup[] = [
-    { categoryIds: [1, 2, 3], name: `Men's Pants`, gender: 'men', type: 'pants', categoryId: 10 },
-    { categoryIds: [4, 5, 6, 7, 8], name: `Women's Pants`, gender: 'women', type: 'pants', categoryId: 20 },
-    { categoryIds: [9, 10], name: `Men's Shirts`, gender: 'men', type: 'shirt', categoryId: 30 },
-    { categoryIds: [11], name: `Brands`, gender: 'all', type: 'brands', categoryId: 40 },
+    { categoryIds: [1, 2, 3], name: `Men's Pants`, gender: 'MEN', type: 'pants', categoryId: 10 },
+    { categoryIds: [4, 5, 6, 7, 8], name: `Women's Pants`, gender: 'WOMEN', type: 'pants', categoryId: 20 },
+    { categoryIds: [9, 10], name: `Men's Shirts`, gender: 'MEN', type: 'shirt', categoryId: 30 },
+    { categoryIds: [11], name: `Brands`, gender: 'ALL', type: 'brands', categoryId: 40 },
 ];
 
 const electronicsCategories = [
-    { categoryIds: [12, 13, 14], name: `Mobile Phone Brands`, categoryId: 50, type: "brands" },
+    { categoryIds: [12, 13, 14], name: `Mobile Phone Brands`, categoryId: 50, type: "brands", portable: true },
 ]
 
 const allfocusCategoryGroups = [
@@ -76,6 +80,17 @@ function resolveFashionPreferences(): FashionPreference[] {
 
 // Imaginary GraphQL resolvers on Stashplex
 export const resolvers = {
+    FocusCategoryGroup: {
+        __resolveType(obj) {
+            if(obj.gender) {
+                return 'FashionFocusCategoryGroup';
+            }
+            if(obj.portable) {
+                return 'ElectronicsFocusCategoryGroup';
+            }
+            return null; // GraphQLError is thrown
+        }
+    },
     Query: {
         preferences: () => userPreferences,
         fashionCategories: () => fashionCategories,
