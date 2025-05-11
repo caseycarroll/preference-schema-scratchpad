@@ -1,4 +1,4 @@
-import { toFashionPreferences, toPreferencesWithDescriptors } from "./utils.ts";
+import { toFashionPreferences, toPreferencesWithDescriptors } from "./utils.js";
 
 // Shape of user preferences in CDP
 export type ExplicitPreference = {
@@ -44,6 +44,7 @@ const userPreferences: ExplicitPreference[] = [
     { value: '38', leafCat: 7 },
     { value: 'large', leafCat: 10 },
     { value: 'medium', leafCat: 9 },
+    // Question: Does brand have a leafCat?
     { value: 'adidas', leafCat: 11 },
 ];
 

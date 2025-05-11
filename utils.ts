@@ -1,4 +1,4 @@
-import { ExplicitPreference, fashionCategories, FashionPreference } from "./preferences.ts";
+import { type ExplicitPreference, fashionCategories, type FashionPreference } from "./preferences.js";
 
 function toFashionPreferences(acc: FashionPreference[], userPreference: ExplicitPreference) {
     const category = fashionCategories.find((category) =>

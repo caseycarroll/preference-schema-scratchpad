@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": true,
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "*.test.ts"]
+}
