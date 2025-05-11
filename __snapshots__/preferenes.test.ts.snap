@@ -1,0 +1,270 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
+[
+  {
+    "categoryId": 10,
+    "categoryName": "Men's Pants",
+    "descriptor": "tall",
+    "gender": "men",
+    "type": "pants",
+    "value": "large",
+  },
+  {
+    "categoryId": 10,
+    "categoryName": "Men's Pants",
+    "descriptor": undefined,
+    "gender": "men",
+    "type": "pants",
+    "value": "medium",
+  },
+  {
+    "categoryId": 10,
+    "categoryName": "Men's Pants",
+    "descriptor": undefined,
+    "gender": "men",
+    "type": "pants",
+    "value": "medium",
+  },
+  {
+    "categoryId": 10,
+    "categoryName": "Men's Pants",
+    "descriptor": undefined,
+    "gender": "men",
+    "type": "pants",
+    "value": "small",
+  },
+  {
+    "categoryId": 20,
+    "categoryName": "Women's Pants",
+    "descriptor": "waist",
+    "gender": "women",
+    "type": "pants",
+    "value": "32",
+  },
+  {
+    "categoryId": 20,
+    "categoryName": "Women's Pants",
+    "descriptor": "waist",
+    "gender": "women",
+    "type": "pants",
+    "value": "34",
+  },
+  {
+    "categoryId": 20,
+    "categoryName": "Women's Pants",
+    "descriptor": "inseam",
+    "gender": "women",
+    "type": "pants",
+    "value": "36",
+  },
+  {
+    "categoryId": 20,
+    "categoryName": "Women's Pants",
+    "descriptor": undefined,
+    "gender": "women",
+    "type": "pants",
+    "value": "38",
+  },
+  {
+    "categoryId": 30,
+    "categoryName": "Men's Shirts",
+    "descriptor": undefined,
+    "gender": "men",
+    "type": "shirt",
+    "value": "large",
+  },
+  {
+    "categoryId": 30,
+    "categoryName": "Men's Shirts",
+    "descriptor": undefined,
+    "gender": "men",
+    "type": "shirt",
+    "value": "medium",
+  },
+]
+`;
+
+exports[`Preference Resolvers > should resolve fashion preferences by type 1`] = `
+{
+  "pants": [
+    {
+      "categoryId": 10,
+      "categoryName": "Men's Pants",
+      "descriptor": "tall",
+      "gender": "men",
+      "type": "pants",
+      "value": "large",
+    },
+    {
+      "categoryId": 10,
+      "categoryName": "Men's Pants",
+      "descriptor": undefined,
+      "gender": "men",
+      "type": "pants",
+      "value": "medium",
+    },
+    {
+      "categoryId": 10,
+      "categoryName": "Men's Pants",
+      "descriptor": undefined,
+      "gender": "men",
+      "type": "pants",
+      "value": "medium",
+    },
+    {
+      "categoryId": 10,
+      "categoryName": "Men's Pants",
+      "descriptor": undefined,
+      "gender": "men",
+      "type": "pants",
+      "value": "small",
+    },
+    {
+      "categoryId": 20,
+      "categoryName": "Women's Pants",
+      "descriptor": "waist",
+      "gender": "women",
+      "type": "pants",
+      "value": "32",
+    },
+    {
+      "categoryId": 20,
+      "categoryName": "Women's Pants",
+      "descriptor": "waist",
+      "gender": "women",
+      "type": "pants",
+      "value": "34",
+    },
+    {
+      "categoryId": 20,
+      "categoryName": "Women's Pants",
+      "descriptor": "inseam",
+      "gender": "women",
+      "type": "pants",
+      "value": "36",
+    },
+    {
+      "categoryId": 20,
+      "categoryName": "Women's Pants",
+      "descriptor": undefined,
+      "gender": "women",
+      "type": "pants",
+      "value": "38",
+    },
+  ],
+  "shirt": [
+    {
+      "categoryId": 30,
+      "categoryName": "Men's Shirts",
+      "descriptor": undefined,
+      "gender": "men",
+      "type": "shirt",
+      "value": "large",
+    },
+    {
+      "categoryId": 30,
+      "categoryName": "Men's Shirts",
+      "descriptor": undefined,
+      "gender": "men",
+      "type": "shirt",
+      "value": "medium",
+    },
+  ],
+}
+`;
+
+exports[`Preference Resolvers > should resolve fashion preferences by type and gender 1`] = `
+{
+  "pants": {
+    "men": [
+      {
+        "categoryId": 10,
+        "categoryName": "Men's Pants",
+        "descriptor": "tall",
+        "gender": "men",
+        "type": "pants",
+        "value": "large",
+      },
+      {
+        "categoryId": 10,
+        "categoryName": "Men's Pants",
+        "descriptor": undefined,
+        "gender": "men",
+        "type": "pants",
+        "value": "medium",
+      },
+      {
+        "categoryId": 10,
+        "categoryName": "Men's Pants",
+        "descriptor": undefined,
+        "gender": "men",
+        "type": "pants",
+        "value": "medium",
+      },
+      {
+        "categoryId": 10,
+        "categoryName": "Men's Pants",
+        "descriptor": undefined,
+        "gender": "men",
+        "type": "pants",
+        "value": "small",
+      },
+    ],
+    "women": [
+      {
+        "categoryId": 20,
+        "categoryName": "Women's Pants",
+        "descriptor": "waist",
+        "gender": "women",
+        "type": "pants",
+        "value": "32",
+      },
+      {
+        "categoryId": 20,
+        "categoryName": "Women's Pants",
+        "descriptor": "waist",
+        "gender": "women",
+        "type": "pants",
+        "value": "34",
+      },
+      {
+        "categoryId": 20,
+        "categoryName": "Women's Pants",
+        "descriptor": "inseam",
+        "gender": "women",
+        "type": "pants",
+        "value": "36",
+      },
+      {
+        "categoryId": 20,
+        "categoryName": "Women's Pants",
+        "descriptor": undefined,
+        "gender": "women",
+        "type": "pants",
+        "value": "38",
+      },
+    ],
+  },
+  "shirt": {
+    "men": [
+      {
+        "categoryId": 30,
+        "categoryName": "Men's Shirts",
+        "descriptor": undefined,
+        "gender": "men",
+        "type": "shirt",
+        "value": "large",
+      },
+      {
+        "categoryId": 30,
+        "categoryName": "Men's Shirts",
+        "descriptor": undefined,
+        "gender": "men",
+        "type": "shirt",
+        "value": "medium",
+      },
+    ],
+  },
+}
+`;
