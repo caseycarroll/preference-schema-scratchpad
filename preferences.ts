@@ -17,7 +17,7 @@ interface FocusCateogryGrouping {
 interface FashionFocusCategoryGrouping extends FocusCateogryGrouping {
     // add gender to avoid string parsing of name in base
     // useful for grouping data in the UI
-    gender: string;
+    gender: 'all' | 'men' | 'women';
     type: string; // Type of clothing i.e. Pants, Shirt
 }
 
@@ -46,6 +46,7 @@ const userPreferences: ExplicitPreference[] = [
     { value: '38', categoryId: 7 },
     { value: 'large', categoryId: 10 },
     { value: 'medium', categoryId: 9 },
+    { value: 'adidas', categoryId: 11 },
 ];
 
 // Fashion Category Groupings maintained by humans
@@ -54,6 +55,7 @@ export const fashionCategories: FashionFocusCategoryGrouping[] = [
     { categoryIds: [1, 2, 3], name: `Men's Pants`, gender: 'men', type: 'pants', categoryId: 10 },
     { categoryIds: [4, 5, 6, 7, 8], name: `Women's Pants`, gender: 'women', type: 'pants', categoryId: 20 },
     { categoryIds: [9, 10], name: `Men's Shirts`, gender: 'men', type: 'shirt', categoryId: 30 },
+    { categoryIds: [11], name: `Brands`, gender: 'all', type: 'brands', categoryId: 40 },
 ];
 
 function resolveFashionPreferences(): FashionPreference[] {
@@ -91,6 +93,8 @@ export const resolvers = {
         preferences: () => userPreferences,
         fashionCategories: () => fashionCategories,
         fashionPreferences: () => resolveFashionPreferences(),
+        
+        // not ideal resolvers, just for testing
         fashionPreferencesByType: () => resolveFashionPreferencesByType(),
         fashionPrefrencesByTypeAndGender: () => resolveFashionPreferencesByTypeAndGender()
     },

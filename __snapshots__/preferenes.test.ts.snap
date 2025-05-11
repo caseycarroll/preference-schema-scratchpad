@@ -82,11 +82,29 @@ exports[`Preference Resolvers > should resolve fashion preferences 1`] = `
     "type": "shirt",
     "value": "medium",
   },
+  {
+    "categoryId": 40,
+    "categoryName": "Brands",
+    "descriptor": undefined,
+    "gender": "all",
+    "type": "brands",
+    "value": "adidas",
+  },
 ]
 `;
 
 exports[`Preference Resolvers > should resolve fashion preferences by type 1`] = `
 {
+  "brands": [
+    {
+      "categoryId": 40,
+      "categoryName": "Brands",
+      "descriptor": undefined,
+      "gender": "all",
+      "type": "brands",
+      "value": "adidas",
+    },
+  ],
   "pants": [
     {
       "categoryId": 10,
@@ -176,6 +194,18 @@ exports[`Preference Resolvers > should resolve fashion preferences by type 1`] =
 
 exports[`Preference Resolvers > should resolve fashion preferences by type and gender 1`] = `
 {
+  "brands": {
+    "all": [
+      {
+        "categoryId": 40,
+        "categoryName": "Brands",
+        "descriptor": undefined,
+        "gender": "all",
+        "type": "brands",
+        "value": "adidas",
+      },
+    ],
+  },
   "pants": {
     "men": [
       {
