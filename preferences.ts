@@ -19,7 +19,7 @@ interface FocusCategoryPreference {
     focusCategoryGroup: FocusCateogryGroup;
 }
 
-// Extend FocusCateogryGrouping for Fashion use case
+// Extend FocusCateogryGroup for Fashion use case
 interface FashionFocusCategoryGroup extends FocusCateogryGroup {
     // add gender to avoid string parsing of name in base
     // useful for grouping data in the UI
